@@ -9,14 +9,14 @@ CORS(app)
 @app.route('/category/all', methods=['GET'])
 def get_all_categories():
     # Load categories from category.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/category.json', 'r') as f:
+    with open('F:/ReactProject/Billing-Module/backend/category.json', 'r') as f:
         categories = json.load(f)
     return jsonify(categories)
 
 @app.route('/category/delete/<int:id>', methods=['DELETE'])
 def delete_category(id):
     # Load categories from category.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/category.json', 'r') as f:
+    with open('F:/ReactProject/Billing-Module/backend/category.json', 'r') as f:
         categories = json.load(f)
 
     # Find the category to delete
@@ -28,7 +28,7 @@ def delete_category(id):
     categories.remove(category)
 
     # Save the updated categories to the category.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/category.json', 'w') as f:
+    with open('F:/ReactProject/Billing-Module/backend/category.json', 'w') as f:
         json.dump(categories, f)
 
     return jsonify({'message': 'Category deleted successfully'})
@@ -40,7 +40,7 @@ def add_category():
     name = data['name']
 
     # Save to category.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/category.json', 'r') as f:
+    with open('F:/ReactProject/Billing-Module/backend/category.json', 'r') as f:
         categories = json.load(f)
 
     # Generate a unique id for the new category
@@ -50,7 +50,7 @@ def add_category():
     categories.append({'id': id, 'name': name})
 
     # Save the updated categories to the category.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/category.json', 'w') as f:
+    with open('F:/ReactProject/Billing-Module/backend/category.json', 'w') as f:
         json.dump(categories, f)
 
     return jsonify({'message': 'Category added successfully'})
@@ -71,7 +71,7 @@ def add_product():
     print(breadth)
 
     # Load products from product.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/product.json', 'r') as f:
+    with open('F:/ReactProject/Billing-Module/backend/product.json', 'r') as f:
         products = json.load(f)
 
     # Generate a unique id for the new product
@@ -81,7 +81,7 @@ def add_product():
     products.append({'id': id, 'name': name, 'price': price, 'length': length, 'breadth' : breadth, 'category': category})
 
     # Save the updated products to the product.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/product.json', 'w') as f:
+    with open('F:/ReactProject/Billing-Module/backend/product.json', 'w') as f:
         json.dump(products, f)
 
     return jsonify({'message': 'Product added successfully'})
@@ -89,14 +89,14 @@ def add_product():
 @app.route('/product/all', methods=['GET'])
 def get_all_product():
     # Load categories from product.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/product.json', 'r') as f:
+    with open('F:/ReactProject/Billing-Module/backend/product.json', 'r') as f:
         product = json.load(f)
     return jsonify(product)
 
 @app.route('/product/<int:id>', methods=['DELETE'])
 def delete_product(id):
     # Load products from product.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/product.json', 'r') as f:
+    with open('F:/ReactProject/Billing-Module/backend/product.json', 'r') as f:
         products = json.load(f)
 
     # Find the product to delete
@@ -108,7 +108,7 @@ def delete_product(id):
     products.remove(product)
 
     # Save the updated products to the product.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/product.json', 'w') as f:
+    with open('F:/ReactProject/Billing-Module/backend/product.json', 'w') as f:
         json.dump(products, f)
 
     return jsonify({'message': 'Product deleted successfully'})
@@ -127,7 +127,7 @@ def invoice():
     category = data['category']
 
     # Load products from product.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/product.json', 'r') as f:
+    with open('F:/ReactProject/Billing-Module/backend/product.json', 'r') as f:
         products = json.load(f)
 
     # Generate a unique id for the new product
@@ -137,7 +137,7 @@ def invoice():
     products.append({'id': id, 'name': name, 'price': price, 'stock': stock, 'category': category})
 
     # Save the updated products to the product.json file
-    with open('C:/Users/VISHNU/Desktop/important/python/varshan agency billing module/billing/billing/backend/product.json', 'w') as f:
+    with open('F:/ReactProject/Billing-Module/backend/product.json', 'w') as f:
         json.dump(products, f)
 
     return jsonify({'message': 'Product added successfully'})
