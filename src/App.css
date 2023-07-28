@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  justify-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.title h2 {
+  position: absolute;
+  top: -60px;
+  color: white;
+  z-index: 199;
+}
